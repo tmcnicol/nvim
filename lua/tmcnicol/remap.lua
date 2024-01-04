@@ -25,6 +25,11 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
+-- Run tmux sessionizer
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww session<CR>")
+
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
 -- Quick fixlists
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")

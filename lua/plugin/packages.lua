@@ -5,7 +5,12 @@ return {
 
 	{
 		"nvim-telescope/telescope.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			-- Telescope plugins
+			"benfowler/telescope-luasnip.nvim",
+			"nvim-telescope/telescope-file-browser.nvim",
+		},
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -22,6 +27,7 @@ return {
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-sleuth" },
 	{ "tpope/vim-vinegar" },
+	{ "christoomey/vim-tmux-navigator" },
 	{ "mbbill/undotree" },
 	{ "andymass/vim-matchup" },
 	{
