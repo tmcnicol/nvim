@@ -1,17 +1,11 @@
 vim.g.mapleader = " "
 
 -- Visually move lines
-vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
 -- Put cursor at the start of the line when joining
 vim.keymap.set("n", "J", "mzJ`z")
-
--- Keep cursor in the middle
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzzv")
-vim.keymap.set("n", "N", "Nzzzzv")
 
 -- Paste over without replacing buffer
 vim.keymap.set("n", "<leader>p", "\"+_dP")
@@ -37,7 +31,19 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Searching
-vim.keymap.set("c", "<C-g>", "\\(\\)<Left><Left>")
+vim.keymap.set("c", "<C-g>", "\\(\\)<Left><Left>") -- add search groups
+
+-- Search for visual selection
+-- https://www.reddit.com/r/neovim/comments/vu9atg/how_do_i_get_the_text_selected_in_visual_mode/
+-- local function get_visual()
+-- 	local vstart = vim.fn.getpos("'<")
+-- 	local line_start = vstart[2]
+-- 	local col_start = vstart[3]
+--
+-- 	print(line_start, col_start)
+-- end
+--
+-- vim.keymap.set("v", "//", get_visual)
 
 -- Make vim a little more emacs-y
 vim.keymap.set("c", "<C-a>", "<Home>")

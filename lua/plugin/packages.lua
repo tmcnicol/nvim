@@ -26,8 +26,19 @@ return {
 	{ "numToStr/Comment.nvim" },
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-sleuth" },
-	{ "tpope/vim-vinegar" },
-	{ "christoomey/vim-tmux-navigator" },
+	{
+		"ggandor/leap.nvim",
+		enabled = false,
+	},
+	{
+		-- Trying out vim oil instead
+		"tpope/vim-vinegar",
+		enabled = false,
+	},
+	{
+		"stevearc/oil.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 	{ "mbbill/undotree" },
 	{ "andymass/vim-matchup" },
 	{

@@ -1,3 +1,5 @@
+vim.opt.errorbells = false
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -12,7 +14,7 @@ vim.opt.smarttab = true
 vim.opt.wrap = false
 vim.opt.linebreak = true
 
-vim.opt.formatoptions = "tcqjr"
+vim.opt.formatoptions = "tcqj"
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -29,6 +31,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/vim/undodir"
 vim.opt.undofile = true
+vim.opt.hidden = false
 
 vim.opt.updatetime = 50
 
@@ -37,4 +40,3 @@ vim.opt.colorcolumn = "80"
 -- Natural splits
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
