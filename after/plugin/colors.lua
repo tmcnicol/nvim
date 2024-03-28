@@ -1,1 +1,1 @@
-vim.cmd.colorscheme("kanagawa");
+require('colorbuddy').colorscheme('gruvbuddy')

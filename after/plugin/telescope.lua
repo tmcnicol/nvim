@@ -1,24 +1,33 @@
 local telescope = require("telescope")
 
+local actions = require("telescope.actions")
 telescope.setup({
-	pickers = {
-		find_files = {
-			theme = "dropdown",
+	mappings = {
+		i = {
+			["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
 		},
-		buffers = {
-			theme = "dropdown",
-		},
-		old_files = {
-			theme = "dropdown",
-		},
-		file_browser = {
-			theme = "dropdown",
+		v = {
+			["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
 		},
 	},
+	-- pickers = {
+	-- 	find_files = {
+	-- 		theme = "dropdown",
+	-- 	},
+	-- 	buffers = {
+	-- 		theme = "dropdown",
+	-- 	},
+	-- 	old_files = {
+	-- 		theme = "dropdown",
+	-- 	},
+	-- 	file_browser = {
+	-- 		theme = "dropdown",
+	-- 	},
+	-- },
 	luasnip = require("telescope.themes").get_dropdown({
-		border   = false,
-		preview  = {
-			check_mime_type  = true
+		border  = false,
+		preview = {
+			check_mime_type = true
 		},
 	}),
 })
@@ -33,7 +42,9 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<C-p>", builtin.git_files, {})
 vim.keymap.set("n", "<leader>fs", function()
-	builtin.grep_string({search = vim.fn.input("Grep > ")});
+	builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
+vim.keymap.set("v", "<leader>fs", builtin.grep_string, {})
 vim.keymap.set("n", "<leader>fl", telescope.extensions.luasnip.luasnip)
 vim.keymap.set("n", "<leader>-", telescope.extensions.file_browser.file_browser)
+

@@ -1,5 +1,5 @@
 return {
-	{ 
+	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason.nvim",
@@ -29,4 +29,12 @@ return {
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+	-- {
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	event = "InsertEnter",
+	-- 	cmd = "Copilot",
+	-- 	dependencies = {
+	-- 		"zbirenbaum/copilot-cmp",
+	-- 	},
+	-- },
 }

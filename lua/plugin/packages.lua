@@ -1,7 +1,7 @@
 return {
 	-- Colorscheme
-	{ "savq/melange-nvim" },
-	{ "rebelot/kanagawa.nvim" },
+	{ "tjdevries/colorbuddy.vim" },
+	{ "tjdevries/gruvbuddy.nvim" },
 
 	{
 		"nvim-telescope/telescope.nvim",
@@ -26,15 +26,6 @@ return {
 	{ "numToStr/Comment.nvim" },
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-sleuth" },
-	{
-		"ggandor/leap.nvim",
-		enabled = false,
-	},
-	{
-		-- Trying out vim oil instead
-		"tpope/vim-vinegar",
-		enabled = false,
-	},
 	{
 		"stevearc/oil.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },

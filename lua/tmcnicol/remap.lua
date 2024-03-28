@@ -24,11 +24,6 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww session<CR>")
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
--- Quick fixlists
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Searching
 vim.keymap.set("c", "<C-g>", "\\(\\)<Left><Left>") -- add search groups
@@ -54,3 +49,22 @@ vim.keymap.set("c", "<C-b>", "<Left>")
 vim.keymap.set("c", "<C-f>", "<Right>")
 vim.keymap.set("c", "<M-b>", "<S-Left>")
 vim.keymap.set("c", "<M-f>", "<S-Right>")
+
+-- Quickfix lists
+vim.keymap.set("n", "<C-k>", "<cmd>:cprev<CR>zz", { desc = "quickfix: prev" })
+vim.keymap.set("n", "<C-j>", "<cmd>:cnext<CR>zz", { desc = "quickfix: next" })
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+local qflist_open = false
+local function toggleQFList()
+	if qflist_open then
+		vim.cmd "cclose"
+		qflist_open = false
+	else
+		vim.cmd "botright copen"
+		qflist_open = true
+	end
+end
+
+vim.keymap.set("n", "<C-q>", toggleQFList)
