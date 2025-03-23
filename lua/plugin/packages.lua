@@ -1,7 +1,6 @@
 return {
 	-- Colorscheme
 	{ "tjdevries/colorbuddy.vim" },
-	{ "tjdevries/gruvbuddy.nvim" },
 
 	{
 		"nvim-telescope/telescope.nvim",
@@ -23,21 +22,29 @@ return {
 	{ "ThePrimeagen/harpoon" },
 	{ "tpope/vim-fugitive" },
 	{ "tpope/vim-surround" },
+	{ "simeji/winresizer" },
 	{ "numToStr/Comment.nvim" },
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-sleuth" },
+	{ "tpope/vim-dadbod",
+		dependencies = {
+			"kristijanhusak/vim-dadbod-completion",
+			"kristijanhusak/vim-dadbod-ui",
+		},
+	},
 	{
 		"stevearc/oil.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{ "mbbill/undotree" },
 	{ "andymass/vim-matchup" },
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-	},
+	-- {
+	-- 	"folke/which-key.nvim",
+	-- 	event = "VeryLazy",
+	-- },
 	{ "fatih/vim-go" },
 
 	-- Webdev things
 	{ "mattn/emmet-vim" },
+	{ "norcalli/nvim-colorizer.lua" }
 }

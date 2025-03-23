@@ -19,11 +19,13 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
+-- Fugitive
+vim.keymap.set("v", "<leader>gh", "<Cmd>0Glog<CR>")
+
 -- Run tmux sessionizer
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww session<CR>")
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
 
 -- Searching
 vim.keymap.set("c", "<C-g>", "\\(\\)<Left><Left>") -- add search groups

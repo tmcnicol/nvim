@@ -35,6 +35,7 @@ telescope.setup({
 telescope.load_extension("luasnip")
 
 local builtin = require("telescope.builtin")
+vim.keymap.set('n', '<leader>fr', builtin.resume, {}) -- resume
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fo", builtin.oldfiles, {})
@@ -47,4 +48,3 @@ end)
 vim.keymap.set("v", "<leader>fs", builtin.grep_string, {})
 vim.keymap.set("n", "<leader>fl", telescope.extensions.luasnip.luasnip)
 vim.keymap.set("n", "<leader>-", telescope.extensions.file_browser.file_browser)
-
