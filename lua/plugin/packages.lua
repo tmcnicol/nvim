@@ -21,6 +21,7 @@ return {
 	{ "nvim-treesitter/nvim-treesitter-context" },
 	{ "ThePrimeagen/harpoon" },
 	{ "tpope/vim-fugitive" },
+	{ "lewis6991/gitsigns.nvim" },
 	{ "tpope/vim-surround" },
 	{ "simeji/winresizer" },
 	{ "numToStr/Comment.nvim" },
