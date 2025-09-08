@@ -96,6 +96,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
 				end,
 			},
 		}
+
+		nmap( '<leader>k', function()
+			vim.diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
+
+			vim.api.nvim_create_autocmd('CursorMoved', {
+				group = vim.api.nvim_create_augroup('line-diagnostics', { clear = true }),
+				callback = function()
+					vim.diagnostic.config({ virtual_lines = false, virtual_text = true })
+					return true
+				end,
+			})
+		end)
 	end
 })
 
@@ -153,14 +165,65 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(),
 	},
 	sources = {
-		-- { name = "copilot" },
 		{ name = "nvim_lsp" },
+		-- { name = "codeium" },
 		{ name = "luasnip" },
 		{ name = 'buffer' },
 		{ name = "path" },
 	},
+
+	formatting = {
+		format = require('lspkind').cmp_format({
+			mode = "symbol",
+			maxwidth = {
+				menu = 50,
+				abbr = 50,
+			},
+			ellipsis_char = '...',
+			show_labelDetails = true,
+
+			symbol_map = {
+				Text = "󰉿",
+				Method = "󰆧",
+				Function = "󰊕",
+				Constructor = "",
+				Field = "󰜢",
+				Variable = "󰀫",
+				Class = "󰠱",
+				Interface = "",
+				Module = "",
+				Property = "󰜢",
+				Unit = "󰑭",
+				Value = "󰎠",
+				Enum = "",
+				Keyword = "󰌋",
+				Snippet = "",
+				Color = "󰏘",
+				File = "󰈙",
+				Reference = "󰈇",
+				Folder = "󰉋",
+				EnumMember = "",
+				Constant = "󰏿",
+				Struct = "󰙅",
+				Event = "",
+				Operator = "󰆕",
+				TypeParameter = "",
+
+				-- Custom symbols
+				Codeium = "✦",
+			},
+
+
+		})
+	}
 })
 
+cmp.setup.filetype({ "oil" }, {
+	sources = {
+		{ name = 'buffer' },
+		{ name = "path" },
+	},
+})
 
 cmp.setup.filetype({ "sql" }, {
 	sources = {

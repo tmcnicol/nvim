@@ -33,6 +33,7 @@ telescope.setup({
 })
 
 telescope.load_extension("luasnip")
+telescope.load_extension("git_worktree")
 
 local builtin = require("telescope.builtin")
 vim.keymap.set('n', '<leader>fr', builtin.resume, {}) -- resume

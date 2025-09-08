@@ -1,0 +1,21 @@
+-- local codeium = require "codeium"
+-- local enabled = false
+-- local function setup_codeium()
+--     if enabled then
+--         return
+--     end
+--
+--     enabled = true
+--     codeium.setup({
+--         virtual_text = {
+--             enabled = true,
+--             key_bindings = {
+--                 accept = '<M-y>'
+--             }
+--         }
+--     })
+-- end
+--
+-- vim.keymap.set("n", "<leader>ce", setup_codeium, {desc = "codeium: enable"})
+-- vim.keymap.set("n", "<leader>ct", codeium.toggle)
+-- vim.keymap.set("n", "<leader>cc", codeium.chat)

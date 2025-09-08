@@ -10,10 +10,13 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- Paste over without replacing buffer
 vim.keymap.set("n", "<leader>p", "\"+_dP")
 
+
 -- Copy to the clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
+
+vim.keymap.set("n", "<leader>yf", ":let @+ = expand('%')<CR>", { desc = "copy current file buffer" })
 
 -- Delete to a void register
 vim.keymap.set("n", "<leader>d", "\"_d")

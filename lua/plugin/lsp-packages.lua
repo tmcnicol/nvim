@@ -13,6 +13,8 @@ return {
 		-- Autocompletion
 		"hrsh7th/nvim-cmp",
 		dependencies = {
+			"onsails/lspkind.nvim",
+
 			-- Snippet Engine & its associated nvim-cmp source
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
@@ -29,6 +31,13 @@ return {
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+
+	-- {
+	-- 	"Exafunction/windsurf.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 	}
+	-- },
 	-- {
 	-- 	"zbirenbaum/copilot.lua",
 	-- 	event = "InsertEnter",

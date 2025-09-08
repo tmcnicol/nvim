@@ -26,4 +26,11 @@ local hero_icon = {
 	),
 }
 
-ls.add_snippets("svelte", hero_icon)
+-- This doesn't work?
+local eslint_no_unused_vars = {
+	s(
+		"nounused", t("// eslint-disable-line no-unused-vars")
+	),
+}
+
+ls.add_snippets("svelte", hero_icon, eslint_no_unused_vars)

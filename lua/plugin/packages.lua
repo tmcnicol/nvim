@@ -20,7 +20,13 @@ return {
 	{ "nvim-treesitter/playground" },
 	{ "nvim-treesitter/nvim-treesitter-context" },
 	{ "ThePrimeagen/harpoon" },
-	{ "tpope/vim-fugitive" },
+	{ "ThePrimeagen/git-worktree.nvim" },
+	{
+		"tpope/vim-fugitive",
+		dependencies = {
+            "tpope/vim-rhubarb",
+        },
+	},
 	{ "lewis6991/gitsigns.nvim" },
 	{ "tpope/vim-surround" },
 	{ "simeji/winresizer" },
