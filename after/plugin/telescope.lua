@@ -49,3 +49,6 @@ end)
 vim.keymap.set("v", "<leader>fs", builtin.grep_string, {})
 vim.keymap.set("n", "<leader>fl", telescope.extensions.luasnip.luasnip)
 vim.keymap.set("n", "<leader>-", telescope.extensions.file_browser.file_browser)
+
+-- List symbols
+vim.keymap.set("n", "<leader>ls", builtin.lsp_document_symbols, {desc = "list symbols"})
